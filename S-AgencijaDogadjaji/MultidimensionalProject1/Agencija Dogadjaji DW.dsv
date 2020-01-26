@@ -1,0 +1,206 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="809efcdf-cf34-4949-af4a-f42298b8df1a" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Agencija Dogadjaji DW</ID>
+  <Name>Agencija Dogadjaji DW</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Agencija Dogadjaji DW</DataSourceID>
+  <Schema>
+    <xs:schema id="Agencija_x0020_Dogadjaji_x0020_DW" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Agencija_x0020_Dogadjaji_x0020_DW" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="665e240a-fea6-45c8-b90e-6002f6f74d46">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_DimKlijenti" msprop:design-time-name="4bc42f06-11e5-4b82-9a0e-af9c9bf0977a" msprop:DbTableName="DimKlijenti" msprop:FriendlyName="DimKlijenti" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="KlijentiKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="83fa5f1a-ef88-4147-843c-c77c7aa50d70" msprop:DbColumnName="KlijentiKey" msprop:FriendlyName="KlijentiKey" type="xs:int" />
+                  <xs:element name="KlijentiAltKey" msprop:design-time-name="7fdbda25-ee92-4cb0-8c95-0766f72a6c72" msprop:DbColumnName="KlijentiAltKey" msprop:FriendlyName="KlijentiAltKey" type="xs:int" />
+                  <xs:element name="TipKlijenta" msprop:design-time-name="71e78d9f-0de8-424c-a7b1-8949c0526a62" msprop:DbColumnName="TipKlijenta" msprop:FriendlyName="TipKlijenta">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimLokacija" msprop:design-time-name="3f68f5f1-d25e-4e31-93df-b4ac5d5c475e" msprop:DbTableName="DimLokacija" msprop:FriendlyName="DimLokacija" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="LokacijaKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="e120958b-db7e-46df-a627-40d44496c265" msprop:DbColumnName="LokacijaKey" msprop:FriendlyName="LokacijaKey" type="xs:int" />
+                  <xs:element name="LokacijaAltKey" msprop:design-time-name="9331db42-3896-4e80-a35d-580e49691ed8" msprop:DbColumnName="LokacijaAltKey" msprop:FriendlyName="LokacijaAltKey" type="xs:int" />
+                  <xs:element name="Drzava" msprop:design-time-name="05e8d6e4-5d23-40cb-80cc-215620232575" msprop:DbColumnName="Drzava" msprop:FriendlyName="Drzava">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Grad" msprop:design-time-name="5ec6c00d-46ea-4776-aac0-cd72746d4506" msprop:DbColumnName="Grad" msprop:FriendlyName="Grad">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Poslovnica" msprop:design-time-name="55d3dddf-da5e-4c9b-b2d5-1de79b0cb3ba" msprop:DbColumnName="Poslovnica" msprop:FriendlyName="Poslovnica">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimVrijeme" msprop:design-time-name="e57f5fe0-b122-4ffc-af79-adb599225ae7" msprop:DbTableName="DimVrijeme" msprop:FriendlyName="DimVrijeme" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="VrijemeKey" msprop:design-time-name="42a70016-c97e-409d-9417-1da5b1512238" msprop:DbColumnName="VrijemeKey" msprop:FriendlyName="VrijemeKey">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="8" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="VrijemeAltKey" msprop:design-time-name="fc5d43cc-16dc-4279-9e5f-eeaa3adee1ac" msprop:DbColumnName="VrijemeAltKey" msprop:FriendlyName="VrijemeAltKey" type="xs:dateTime" />
+                  <xs:element name="Mjesec" msprop:design-time-name="87a825c6-7e2d-47ca-856b-634a799c8df4" msprop:DbColumnName="Mjesec" msprop:FriendlyName="Mjesec" type="xs:int" />
+                  <xs:element name="Dan" msprop:design-time-name="a4e198de-5b13-4bab-b1b7-86696115455c" msprop:DbColumnName="Dan" msprop:FriendlyName="Dan" type="xs:int" />
+                  <xs:element name="NazivMjeseca" msprop:design-time-name="4636a564-d0cf-4983-b411-cb5da8f093b3" msprop:DbColumnName="NazivMjeseca" msprop:FriendlyName="NazivMjeseca" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NazivDana" msprop:design-time-name="6ec020ee-0a2e-4615-a88c-c5e9a9377862" msprop:DbColumnName="NazivDana" msprop:FriendlyName="NazivDana" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Godina" msprop:design-time-name="01ec79bf-8a86-4144-b925-5ee07392012a" msprop:DbColumnName="Godina" msprop:FriendlyName="Godina" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimZaposlenici" msprop:design-time-name="7a3e6d87-8fd3-491b-9f2d-af7852a6a210" msprop:DbTableName="DimZaposlenici" msprop:FriendlyName="DimZaposlenici" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ZaposleniciKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="eed8ad1a-4264-46cf-9552-4c0a4e5c7146" msprop:DbColumnName="ZaposleniciKey" msprop:FriendlyName="ZaposleniciKey" type="xs:int" />
+                  <xs:element name="ZaposleniciAltKey" msprop:design-time-name="f1faa76c-7e2f-4775-86bb-79f903b7c4a1" msprop:DbColumnName="ZaposleniciAltKey" msprop:FriendlyName="ZaposleniciAltKey" type="xs:int" />
+                  <xs:element name="TipZaposlenika" msprop:design-time-name="6eec124c-0fd8-4ea0-a6b5-1660fd0a7e58" msprop:DbColumnName="TipZaposlenika" msprop:FriendlyName="TipZaposlenika">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Fakultet" msprop:design-time-name="1e04e212-b511-4f71-b1c8-c03f3760ad34" msprop:DbColumnName="Fakultet" msprop:FriendlyName="Fakultet" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_FactDogadjaji" msprop:design-time-name="717ddaa4-1750-4d9a-baab-c6370f0bab4d" msprop:DbTableName="FactDogadjaji" msprop:FriendlyName="FactDogadjaji" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DogadjajKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="3a4f6e71-e51e-4b28-ae52-7b9124a557ef" msprop:DbColumnName="DogadjajKey" msprop:FriendlyName="DogadjajKey" type="xs:int" />
+                  <xs:element name="LokacijaForeignKey" msprop:design-time-name="5639d8b6-d04b-46f4-82f1-d04367169e31" msprop:DbColumnName="LokacijaForeignKey" msprop:FriendlyName="LokacijaForeignKey" type="xs:int" />
+                  <xs:element name="VrijemeForeignKey" msprop:design-time-name="01abd36e-e9de-489f-9133-e8c0d9905af5" msprop:DbColumnName="VrijemeForeignKey" msprop:FriendlyName="VrijemeForeignKey">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="8" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="KlijentiForeignKey" msprop:design-time-name="a38b8cac-52cd-4598-96cf-90fd099867da" msprop:DbColumnName="KlijentiForeignKey" msprop:FriendlyName="KlijentiForeignKey" type="xs:int" />
+                  <xs:element name="ZaposleniciForeignKey" msprop:design-time-name="8a37cb66-c73a-4d7b-ae24-01d2f3d2720a" msprop:DbColumnName="ZaposleniciForeignKey" msprop:FriendlyName="ZaposleniciForeignKey" type="xs:int" />
+                  <xs:element name="BrojDogadjaja" msprop:design-time-name="04adf6a8-0785-4d49-8d5d-3a4a40733d62" msprop:DbColumnName="BrojDogadjaja" msprop:FriendlyName="BrojDogadjaja" type="xs:int" minOccurs="0" />
+                  <xs:element name="Iznos" msprop:design-time-name="ff596325-573d-4509-9062-436b5fe78569" msprop:DbColumnName="Iznos" msprop:FriendlyName="Iznos" type="xs:decimal" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimKlijenti" />
+          <xs:field xpath="KlijentiKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimLokacija_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimLokacija" />
+          <xs:field xpath="LokacijaKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimVrijeme_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimVrijeme" />
+          <xs:field xpath="VrijemeKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimZaposlenici_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimZaposlenici" />
+          <xs:field xpath="ZaposleniciKey" />
+        </xs:unique>
+        <xs:unique name="dbo_FactDogadjaji_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_FactDogadjaji" />
+          <xs:field xpath="DogadjajKey" />
+        </xs:unique>
+        <xs:keyref name="FK__FactDogad__Zapos__4222D4EF" refer="dbo_DimZaposlenici_Constraint1">
+          <xs:selector xpath=".//dbo_FactDogadjaji" />
+          <xs:field xpath="ZaposleniciForeignKey" />
+        </xs:keyref>
+        <xs:keyref name="FK__FactDogad__Vrije__403A8C7D" refer="dbo_DimVrijeme_Constraint1">
+          <xs:selector xpath=".//dbo_FactDogadjaji" />
+          <xs:field xpath="VrijemeForeignKey" />
+        </xs:keyref>
+        <xs:keyref name="FK__FactDogad__Klije__412EB0B6" refer="Constraint1">
+          <xs:selector xpath=".//dbo_FactDogadjaji" />
+          <xs:field xpath="KlijentiForeignKey" />
+        </xs:keyref>
+        <xs:keyref name="FK__FactDogad__Lokac__3F466844" refer="dbo_DimLokacija_Constraint1">
+          <xs:selector xpath=".//dbo_FactDogadjaji" />
+          <xs:field xpath="LokacijaForeignKey" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <Agencija_x0020_Dogadjaji_x0020_DW xmlns="" />
+  </Schema>
+</DataSourceView>

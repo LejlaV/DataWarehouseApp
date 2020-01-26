@@ -1,0 +1,516 @@
+{
+  "name": "Tabular - AgencijaDogadjaji",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "bs-Latn-BA",
+    "dataSources": [
+      {
+        "name": "AgencijaDogadjajiDB",
+        "connectionString": "Provider=SQLNCLI11;Data Source=.;Initial Catalog=AgencijaDogadjaji;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateAccount",
+        "account": "DESKTOP-L0HNDSD\\User",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "Dogadjaji",
+        "columns": [
+          {
+            "name": "DogadjajID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DogadjajID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Vrsta",
+            "dataType": "string",
+            "sourceColumn": "Vrsta",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Naziv",
+            "dataType": "string",
+            "sourceColumn": "Naziv",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "BrojGostiju",
+            "dataType": "int64",
+            "sourceColumn": "BrojGostiju",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Datum",
+            "dataType": "string",
+            "sourceColumn": "Datum",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "KlijentID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "KlijentID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "GradID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "GradID",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dogadjaji",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Dogadjaji].* FROM [dbo].[Dogadjaji] ",
+              "dataSource": "AgencijaDogadjajiDB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Dogadjaji].* FROM [dbo].[Dogadjaji] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dogadjaji"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Drzava",
+        "isHidden": true,
+        "columns": [
+          {
+            "name": "DrzavaID",
+            "dataType": "int64",
+            "sourceColumn": "DrzavaID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Naziv",
+            "dataType": "string",
+            "sourceColumn": "Naziv",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Drzava",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Drzava].* FROM [dbo].[Drzava] ",
+              "dataSource": "AgencijaDogadjajiDB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Drzava].* FROM [dbo].[Drzava] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Drzava"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Lokacija",
+        "columns": [
+          {
+            "name": "GradID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "GradID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Grad",
+            "dataType": "string",
+            "sourceColumn": "Naziv",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DrzavaID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DrzavaID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "type": "calculated",
+            "name": "Drzava",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "RELATED( Drzava[Naziv])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Grad",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Grad].* FROM [dbo].[Grad] ",
+              "dataSource": "AgencijaDogadjajiDB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Grad].* FROM [dbo].[Grad] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Grad"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Klijenti",
+        "isHidden": true,
+        "columns": [
+          {
+            "name": "KlijentID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "KlijentID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Email",
+            "dataType": "string",
+            "sourceColumn": "Email",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "BrojTelefona",
+            "dataType": "string",
+            "sourceColumn": "BrojTelefona",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "GradID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "GradID",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Klijenti",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Klijenti].* FROM [dbo].[Klijenti] ",
+              "dataSource": "AgencijaDogadjajiDB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Klijenti].* FROM [dbo].[Klijenti] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Klijenti"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Uplata",
+        "columns": [
+          {
+            "name": "UplataID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "UplataID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Iznos",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "Iznos",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "DatumUplate",
+            "dataType": "string",
+            "sourceColumn": "DatumUplate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "KlijentID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "KlijentID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DogadjajID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DogadjajID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "type": "calculated",
+            "name": "Godina",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "YEAR([DatumUplate])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Uplata",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Uplata].* FROM [dbo].[Uplata] ",
+              "dataSource": "AgencijaDogadjajiDB"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Zarada",
+            "expression": "SUM(Uplata[Iznos])"
+          },
+          {
+            "name": "BrojUplata",
+            "expression": "COUNTA([UplataID])"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Uplata].* FROM [dbo].[Uplata] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Uplata"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "KlijentFizickoLice",
+        "columns": [
+          {
+            "name": "KlijentFizickoLiceID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "KlijentFizickoLiceID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Ime",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Ime",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Prezime",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Prezime",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Spol",
+            "dataType": "string",
+            "sourceColumn": "Spol",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "JMBG",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "JMBG",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "type": "calculated",
+            "name": "ImePrezime",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "CONCATENATE(CONCATENATE(KlijentFizickoLice[Ime],\" \"),KlijentFizickoLice[Prezime])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "KlijentFizickoLice",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[KlijentFizickoLice].* FROM [dbo].[KlijentFizickoLice] ",
+              "dataSource": "AgencijaDogadjajiDB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[KlijentFizickoLice].* FROM [dbo].[KlijentFizickoLice] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "KlijentFizickoLice"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "KlijentPravnoLice",
+        "columns": [
+          {
+            "name": "KlijentPravnoLiceID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "KlijentPravnoLiceID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "NazivFirme",
+            "dataType": "string",
+            "sourceColumn": "NazivFirme",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "KlijentPravnoLice",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[KlijentPravnoLice].* FROM [dbo].[KlijentPravnoLice] ",
+              "dataSource": "AgencijaDogadjajiDB"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[KlijentPravnoLice].* FROM [dbo].[KlijentPravnoLice] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "KlijentPravnoLice"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "dee1baa3-cadb-4c4f-9e9e-e1cf8e70d077",
+        "fromTable": "Uplata",
+        "fromColumn": "KlijentID",
+        "toTable": "Klijenti",
+        "toColumn": "KlijentID",
+        "isActive": false
+      },
+      {
+        "name": "d55eb2d2-c24f-47a0-8f49-7396630d3392",
+        "fromTable": "Dogadjaji",
+        "fromColumn": "GradID",
+        "toTable": "Lokacija",
+        "toColumn": "GradID"
+      },
+      {
+        "name": "9a3250d5-a55b-483c-bb1a-c3e628245b98",
+        "fromTable": "Lokacija",
+        "fromColumn": "DrzavaID",
+        "toTable": "Drzava",
+        "toColumn": "DrzavaID"
+      },
+      {
+        "name": "b2bd6f4f-fede-4bd0-a3bc-1068e02c40b5",
+        "fromTable": "Uplata",
+        "fromColumn": "DogadjajID",
+        "toTable": "Dogadjaji",
+        "toColumn": "DogadjajID"
+      },
+      {
+        "name": "b99cc32a-9b03-4987-ad4f-0d2f1bf7517d",
+        "fromTable": "Klijenti",
+        "fromColumn": "GradID",
+        "toTable": "Lokacija",
+        "toColumn": "GradID",
+        "isActive": false
+      },
+      {
+        "name": "0c291e2f-8152-4ed4-bfe1-98b60ae92bba",
+        "fromTable": "Dogadjaji",
+        "fromColumn": "KlijentID",
+        "toTable": "Klijenti",
+        "toColumn": "KlijentID"
+      },
+      {
+        "name": "f80da492-024a-4a89-8bcf-2e6cedbe5a16",
+        "fromTable": "Klijenti",
+        "fromColumn": "KlijentID",
+        "toTable": "KlijentFizickoLice",
+        "toColumn": "KlijentFizickoLiceID"
+      },
+      {
+        "name": "0d63d9ce-f338-44b3-9a8d-ec777ed40f78",
+        "fromTable": "Klijenti",
+        "fromColumn": "KlijentID",
+        "toTable": "KlijentPravnoLice",
+        "toColumn": "KlijentPravnoLiceID"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  }
+}

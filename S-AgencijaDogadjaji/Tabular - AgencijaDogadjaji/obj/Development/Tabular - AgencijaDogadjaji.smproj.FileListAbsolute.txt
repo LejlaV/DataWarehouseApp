@@ -1,0 +1,7 @@
+C:\Users\User\Desktop\1-S\BI\S-AgencijaDogadjaji\Tabular - AgencijaDogadjaji\bin\Model.asdatabase
+C:\Users\User\Desktop\1-S\BI\S-AgencijaDogadjaji\Tabular - AgencijaDogadjaji\bin\Model.deploymenttargets
+C:\Users\User\Desktop\1-S\BI\S-AgencijaDogadjaji\Tabular - AgencijaDogadjaji\bin\Model.deploymentoptions
+C:\Users\User\Desktop\1-S\BI\S-AgencijaDogadjaji\Tabular - AgencijaDogadjaji\obj\Development\Tabular - AgencijaDogadjaji.smproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\1-S\BI\S-AgencijaDogadjaji\Tabular - AgencijaDogadjaji\obj\Development\Model.asdatabase
+C:\Users\User\Desktop\1-S\BI\S-AgencijaDogadjaji\Tabular - AgencijaDogadjaji\obj\Development\Model.deploymentoptions
+C:\Users\User\Desktop\1-S\BI\S-AgencijaDogadjaji\Tabular - AgencijaDogadjaji\obj\Development\Model.deploymenttargets
